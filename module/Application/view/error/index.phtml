@@ -14,11 +14,11 @@
     </dd>
     <dt><?php echo $this->translate('Message') ?>:</dt>
     <dd>
-        <pre class="prettyprint linenums"><?php echo $this->escapeHtml($this->exception->getMessage()) ?></pre>
+        <pre class="prettyprint linenums"><?php echo $this->exception->getMessage() ?></pre>
     </dd>
     <dt><?php echo $this->translate('Stack trace') ?>:</dt>
     <dd>
-        <pre class="prettyprint linenums"><?php echo $this->escapeHtml($this->exception->getTraceAsString()) ?></pre>
+        <pre class="prettyprint linenums"><?php echo $this->exception->getTraceAsString() ?></pre>
     </dd>
 </dl>
 <?php
@@ -38,18 +38,18 @@
             </dd>
             <dt><?php echo $this->translate('Message') ?>:</dt>
             <dd>
-                <pre class="prettyprint linenums"><?php echo $this->escapeHtml($e->getMessage()) ?></pre>
+                <pre class="prettyprint linenums"><?php echo $e->getMessage() ?></pre>
             </dd>
             <dt><?php echo $this->translate('Stack trace') ?>:</dt>
             <dd>
-                <pre class="prettyprint linenums"><?php echo $this->escapeHtml($e->getTraceAsString()) ?></pre>
+                <pre class="prettyprint linenums"><?php echo $e->getTraceAsString() ?></pre>
             </dd>
         </dl>
+        <?php
+                $e = $e->getPrevious();
+            endwhile;
+        ?>
     </li>
-    <?php
-        $e = $e->getPrevious();
-        endwhile;
-    ?>
 </ul>
 <?php endif; ?>
 
